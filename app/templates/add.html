@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block title %}Add Employee{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="col-lg-6 offset-lg-3 col-12">
+        <div class="card shadow rounded-4">
+            <div class="card-body">
+            <h3 class="text-center fw-normal">Add Employee</h3>
+                <form method="post" action="{{ url_for('add_employee') }}">
+                    <div class="mb-3">
+                        <label class="form-label" for="name">Name</label>
+                        <input class="form-control rounded-4" type="text" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-control rounded-4" type="email" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="department">Department</label>
+                        <input class="form-control rounded-4" type="text" id="department" name="department" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="salary">Salary</label>
+                        <input class="form-control rounded-4" type="text" id="salary" name="salary" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <button class="d-block btn btn-success w-50 py-2 mb-3 mx-auto rounded-4">Add</button>
+                        <a class="d-block btn btn-outline-secondary w-50 py-2 mx-auto rounded-4" href="/">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

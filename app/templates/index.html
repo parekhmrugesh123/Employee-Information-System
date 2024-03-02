@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1 class="text-center fw-normal">Employees</h1>
+<div class="text-center my-4">
+    <a class="btn btn-primary rounded-4" href="/add">Add Employee</a>
+</div>
+{% for item in employees %}
+<div class="list-group col-lg-6 col-sm-10 offset-sm-1 mb-1">
+    <a href="{{ url_for('show_employee', id=item.id) }}" class="list-group-item list-group-item-action">
+        {{item.name}}
+    </a>
+</div>
+{% endfor %}
+{% endblock %}
